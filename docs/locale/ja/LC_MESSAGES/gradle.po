@@ -4,9 +4,10 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2017.
 #
 msgid ""
-msgstr "Project-Id-Version: spotbugs 3.1\n"
+msgstr ""
+"Project-Id-Version: spotbugs 3.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-10-02 22:13+0000\n"
+"POT-Creation-Date: 2018-08-08 08:37+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -33,7 +34,9 @@ msgstr "SpotBugs Gradle プラグインを使う"
 msgid ""
 "Please follow instruction found on `official Gradle Plugin page "
 "<https://plugins.gradle.org/plugin/com.github.spotbugs>`_."
-msgstr "`Gradle プラグインの公式ページ <https://plugins.gradle.org/plugin/com.github.spotbugs>`_ の指示に従ってください。"
+msgstr ""
+"`Gradle プラグインの公式ページ "
+"<https://plugins.gradle.org/plugin/com.github.spotbugs>`_ の指示に従ってください。"
 
 #: ../../gradle.rst:11
 msgid ""
@@ -56,13 +59,19 @@ msgid ""
 "`spotbugsMain` task runs SpotBugs for your production Java source files. "
 "This task depends on `classes` task. `spotbugsTest` task runs SpotBugs "
 "for your test Java source files. This task depends on `testClasses` task."
-msgstr "`spotbugsMain` タスクは，製品 Java ソースファイル用の SpotBugs を実行します。このタスクは `classes` タスクに依存します。`spotbugsTest` タスクは，テスト Java ソースファイル用の SpotBugs を実行します。このタスクは `testClasses` タスクに依存します。"
+msgstr ""
+"`spotbugsMain` タスクは，製品 Java ソースファイル用の SpotBugs を実行します。このタスクは `classes` "
+"タスクに依存します。`spotbugsTest` タスクは，テスト Java ソースファイル用の SpotBugs を実行します。このタスクは "
+"`testClasses` タスクに依存します。"
 
 #: ../../gradle.rst:21
+#, fuzzy
 msgid ""
-"SpotBugs Gradle Plugin adds task dependency from `check` to these these "
-"tasks, so you can simply run ``./gradlew check`` to run SpotBugs."
-msgstr "SpotBugs Gradle プラグインは，`check` タスクからこれらのタスクにタスク依存関係を追加するので，単に ``./gradlew check`` を実行すれば SpotBugs を実行できます。"
+"SpotBugs Gradle Plugin adds task dependency from `check` to these tasks, "
+"so you can simply run ``./gradlew check`` to run SpotBugs."
+msgstr ""
+"SpotBugs Gradle プラグインは，`check` タスクからこれらのタスクにタスク依存関係を追加するので，単に ``./gradlew"
+" check`` を実行すれば SpotBugs を実行できます。"
 
 #: ../../gradle.rst:24
 msgid "Configure Gradle Plugin"
@@ -74,7 +83,11 @@ msgid ""
 " Gradle Plugin to configure. Please check the document for "
 "`FindBugsExtension "
 "<http://gradle.monochromeroad.com/docs/dsl/org.gradle.api.plugins.quality.FindBugsExtension.html>`_."
-msgstr "現バージョンの SpotBugs Gradle プラグインは FindBugs Gradle プラグインと同じ方法で設定します。`FindBugsExtension <http://gradle.monochromeroad.com/docs/dsl/org.gradle.api.plugins.quality.FindBugsExtension.html>`_ のドキュメントを参照してください。"
+msgstr ""
+"現バージョンの SpotBugs Gradle プラグインは FindBugs Gradle "
+"プラグインと同じ方法で設定します。`FindBugsExtension "
+"<http://gradle.monochromeroad.com/docs/dsl/org.gradle.api.plugins.quality.FindBugsExtension.html>`_"
+" のドキュメントを参照してください。"
 
 #: ../../gradle.rst:28
 msgid ""
@@ -82,28 +95,32 @@ msgid ""
 "below:"
 msgstr "たとえば，SpotBugs のバージョンを指定したいときは，次のように設定します。"
 
-#: ../../gradle.rst:37
+#: ../../gradle.rst:34
 msgid "Introduce SpotBugs Plugin"
 msgstr "SpotBugs Pluginを利用する"
 
-#: ../../gradle.rst:39
+#: ../../gradle.rst:36
+#, fuzzy
 msgid ""
-"To introduce SpotBugs Plugin, please declare dependency in "
-"``dependencies`` like below:"
+"To introduce SpotBugs Plugin, declare dependency in ``dependencies`` like"
+" below:"
 msgstr "SpotBugs Pluginを利用するには，プラグインへの依存を次のように ``dependencies`` 内に記載してください:"
 
-#: ../../gradle.rst:48
+#: ../../gradle.rst:45
 msgid "Generate SpotBugs Tasks with Android Gradle Plugin"
 msgstr "Android Gradle プラグインで SpotBugs タスクを生成する"
 
-#: ../../gradle.rst:50
+#: ../../gradle.rst:47
 msgid ""
 "SpotBugs Gradle Plugin generates task for each sourceSet. But Android "
 "Gradle Plugin does not generate sourceSet by default (Java plugin does)."
-msgstr "SpotBugs Gradle プラグインは，sourceSet ごとにタスクを生成します。しかし，Android Gradle プラグインは，デフォルトでは sourceSet を生成しません (Java プラグインでは)。"
+msgstr ""
+"SpotBugs Gradle プラグインは，sourceSet ごとにタスクを生成します。しかし，Android Gradle "
+"プラグインは，デフォルトでは sourceSet を生成しません (Java プラグインでは)。"
 
-#: ../../gradle.rst:53
+#: ../../gradle.rst:50
 msgid ""
 "So define sourceSets explicitly, then SpotBugs Gradle plugin generates "
 "tasks for each of them."
 msgstr "sourceSet を明示的に定義すると，SpotBugs Gradle プラグインは sourceSet ごとにタスクを生成します。"
+

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2017-10-18 13:13+0000\n"
+"POT-Creation-Date: 2018-08-08 08:37+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -3708,7 +3708,7 @@ msgstr ""
 msgid ""
 "<p> This code compares an int value with a long constant that is outside\n"
 "the range of values that can be represented as an int value.\n"
-"This comparison is vacuous and possibly to be incorrect.\n"
+"This comparison is vacuous and possibly incorrect.\n"
 "</p>"
 msgstr ""
 
@@ -10557,33 +10557,16 @@ msgstr ""
 #~ msgid "バッドプラクティス (BAD_PRACTICE)"
 #~ msgstr ""
 
-#~ msgid ""
-#~ "推奨または必須のコーディングプラクティスへの違反です。たとえば，hashCode と equals "
-#~ "の問題，Cloneable イディオム，捨てられた例外，Serializable の問題，finalize "
-#~ "の誤用などです。 "
-#~ "いくつかのグループはバッドプラクティスを気にしないかもしれないが，我々はこの解析が正確になるよう努力しています。"
-#~ msgstr ""
-
 #~ msgid "CNT: 既知の定数の雑な値を見つけた (CNT_ROUGH_CONSTANT_VALUE)"
 #~ msgstr ""
 
 #~ msgid "NP: 戻り型が Boolean のメソッドが明示的に null を返している (NP_BOOLEAN_RETURN_NULL)"
 #~ msgstr ""
 
-#~ msgid ""
-#~ "SW: Swing メソッドは AWT イベントディスパッチスレッドから呼び出す必要がある"
-#~ " (SW_SWING_METHODS_INVOKED_IN_SWING_THREAD)"
-#~ msgstr ""
-
 #~ msgid "FI: ファイナライザはフィールドを null にするだけ (FI_FINALIZER_ONLY_NULLS_FIELDS)"
 #~ msgstr ""
 
 #~ msgid "FI: ファイナライザはフィールドを null にする (FI_FINALIZER_NULLS_FIELDS)"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "UI: クラスが拡張されるなら getResource の使い方は安全ではないかもしれない "
-#~ "(UI_INHERITANCE_UNSAFE_GETRESOURCE)"
 #~ msgstr ""
 
 #~ msgid "AM: 空の ZIP ファイルエントリの作成 (AM_CREATES_EMPTY_ZIP_FILE_ENTRY)"
@@ -10593,11 +10576,6 @@ msgstr ""
 #~ msgstr ""
 
 #~ msgid "IMSE: 疑わしい IllegalMonitorStateException のキャッチ (IMSE_DONT_CATCH_IMSE)"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "CN: Cloneable を実装していないクラスが clone メソッドを定義している"
-#~ " (CN_IMPLEMENTS_CLONE_BUT_NOT_CLONEABLE)"
 #~ msgstr ""
 
 #~ msgid "CN: Cloneable を実装したクラスが clone メソッドを定義も使用もしていない (CN_IDIOM)"
@@ -10615,31 +10593,6 @@ msgstr ""
 #~ msgid "Dm: System.exit(...) を呼び出しているメソッド (DM_EXIT)"
 #~ msgstr ""
 
-#~ msgid ""
-#~ "Nm: Java の後のバージョンのキーワードである識別子を使用している "
-#~ "(NM_FUTURE_KEYWORD_USED_AS_IDENTIFIER)"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "Nm: Java の後のバージョンのキーワードである識別子を使用している "
-#~ "(NM_FUTURE_KEYWORD_USED_AS_MEMBER_IDENTIFIER)"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "JCIP: 不変クラスのフィールドは final にすべき "
-#~ "(JCIP_FIELD_ISNT_FINAL_IN_IMMUTABLE_CLASS)"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "Dm: 危険なメソッド runFinalizersOnExit を呼び出しているメソッド "
-#~ "(DM_RUN_FINALIZERS_ON_EXIT)"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "NP: equals メソッドは null の引数をチェックしていない "
-#~ "(NP_EQUALS_SHOULD_HANDLE_NULL_ARGUMENT)"
-#~ msgstr ""
-
 #~ msgid "FI: 空のファイナライザは削除すべき (FI_EMPTY)"
 #~ msgstr ""
 
@@ -10655,11 +10608,6 @@ msgstr ""
 #~ msgid "FI: ファイナライザの明示的な呼び出し (FI_EXPLICIT_INVOCATION)"
 #~ msgstr ""
 
-#~ msgid ""
-#~ "Eq: equals メソッドは互換性のないオペランドをチェックしている "
-#~ "(EQ_CHECK_FOR_OPERAND_NOT_COMPATIBLE_WITH_THIS)"
-#~ msgstr ""
-
 #~ msgid "Eq: equals メソッドはサブタイプのために失敗する (EQ_GETCLASS_AND_CLASS_CONSTANT)"
 #~ msgstr ""
 
@@ -10669,76 +10617,16 @@ msgstr ""
 #~ msgid "Co: 共変な compareTo メソッドの定義 (CO_SELF_NO_OBJECT)"
 #~ msgstr ""
 
-#~ msgid ""
-#~ "Co: compareTo()/compare() は Integer.MIN_VALUE "
-#~ "を返す (CO_COMPARETO_RESULTS_MIN_VALUE)"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "Co: compareTo()/compare() は間違って float または "
-#~ "double 値を処理する (CO_COMPARETO_INCORRECT_FLOATING)"
-#~ msgstr ""
-
 #~ msgid "RV: compareTo()/compare() の結果を無効にする (RV_NEGATING_RESULT_OF_COMPARETO)"
 #~ msgstr ""
 
 #~ msgid "ES: String オブジェクトを == や != を使用して比較している (ES_COMPARING_STRINGS_WITH_EQ)"
 #~ msgstr ""
 
-#~ msgid ""
-#~ "ES: String パラメータを == や != "
-#~ "を使用して比較している (ES_COMPARING_PARAMETER_STRING_WITH_EQ)"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "Eq: compareTo(...) メソッドを定義して Object.equals() "
-#~ "を使用しているクラス (EQ_COMPARETO_USE_OBJECT_EQUALS)"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "HE: hashCode メソッドを定義して Object.equals() "
-#~ "を使用しているクラス (HE_HASHCODE_USE_OBJECT_EQUALS)"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "HE: hashCode メソッドを定義していますが equals "
-#~ "メソッドは定義していないクラス (HE_HASHCODE_NO_EQUALS)"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "HE: equals メソッドを定義して Object.hashCode() "
-#~ "を使用しているクラス (HE_EQUALS_USE_HASHCODE)"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "HE: equals メソッドを継承して Object.hashCode() "
-#~ "を使用しているクラス (HE_INHERITS_EQUALS_USE_HASHCODE)"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "HE: equals メソッドは定義していますが hashCode "
-#~ "メソッドは定義していないクラス (HE_EQUALS_NO_HASHCODE)"
-#~ msgstr ""
-
 #~ msgid "Eq: 抽象クラスは共変な equals メソッドを宣言している (EQ_ABSTRACT_SELF)"
 #~ msgstr ""
 
 #~ msgid "Co: 抽象クラスは共変な compareTo メソッドを定義している (CO_ABSTRACT_SELF)"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "IC: スーパークラスは初期化中にサブクラスを使用している "
-#~ "(IC_SUPERCLASS_USES_SUBCLASS_DURING_INITIALIZATION)"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "SI: スタティックイニシャライザは，すべての static final "
-#~ "フィールドが代入される前にインスタンスを作成する (SI_INSTANCE_BEFORE_FINALS_ASSIGNED)"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "It: Iterator.next() が NoSuchElementException "
-#~ "をスローできない (IT_NO_SUCH_ELEMENT)"
 #~ msgstr ""
 
 #~ msgid "ME: 列挙型フィールドは public で可変である (ME_MUTABLE_ENUM_FIELD)"
@@ -10765,48 +10653,13 @@ msgstr ""
 #~ msgid "Nm: 非常に紛らわしい名前のメソッド (多分意図的) (NM_VERY_CONFUSING_INTENTIONAL)"
 #~ msgstr ""
 
-#~ msgid ""
-#~ "Nm: パラメータの間違ったパッケージのためにスーパークラスのメソッドをオーバーライドしていないメソッド "
-#~ "(NM_WRONG_PACKAGE_INTENTIONAL)"
-#~ msgstr ""
-
 #~ msgid "Nm: 紛らわしい名前のメソッド (NM_CONFUSING)"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "Nm: 例外クラスのように命名されているが，クラスは Exception から派生されていない "
-#~ "(NM_CLASS_NOT_EXCEPTION)"
 #~ msgstr ""
 
 #~ msgid "RR: InputStream.read() の戻り値を無視しているメソッド (RR_NOT_CHECKED)"
 #~ msgstr ""
 
 #~ msgid "RR: InputStream.skip() の戻り値を無視しているメソッド (SR_NOT_CHECKED)"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "Se: Serializable なクラスのスーパークラスで，引数なしコンストラクタを定義していない "
-#~ "(SE_NO_SUITABLE_CONSTRUCTOR)"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "Se: Externalizable なクラスが引数なしコンストラクタを定義していない "
-#~ "(SE_NO_SUITABLE_CONSTRUCTOR_FOR_EXTERNALIZATION)"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "Se: Comparator は Serializable を実装していない "
-#~ "(SE_COMPARATOR_SHOULD_BE_SERIALIZABLE)"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "SnVI: Serializable なクラスが serialVersionUID "
-#~ "を定義していない (SE_NO_SERIALVERSIONID)"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "Se: readResolve メソッドの戻り値の型が Object で宣言されていない"
-#~ " (SE_READ_RESOLVE_MUST_RETURN_OBJECT)"
 #~ msgstr ""
 
 #~ msgid "Se: 直列化復元によって設定されない transient フィールド  (SE_TRANSIENT_FIELD_NOT_RESTORED)"
@@ -10863,41 +10716,16 @@ msgstr ""
 #~ msgid "ODR: データベースリソースのクローズに失敗するかもしれないメソッド (ODR_OPEN_DATABASE_RESOURCE)"
 #~ msgstr ""
 
-#~ msgid ""
-#~ "ODR: 例外経路でデータベースリソースのクローズに失敗するかもしれないメソッド "
-#~ "(ODR_OPEN_DATABASE_RESOURCE_EXCEPTION_PATH)"
-#~ msgstr ""
-
 #~ msgid "ISC: static メソッドだけを提供するクラスの不必要なインスタンス化 (ISC_INSTANTIATE_STATIC_CLASS)"
 #~ msgstr ""
 
 #~ msgid "DMI: Random オブジェクトが作成され1度しか使われない (DMI_RANDOM_USED_ONLY_ONCE)"
 #~ msgstr ""
 
-#~ msgid ""
-#~ "BC: equals メソッドは引数の型を仮定すべきではない "
-#~ "(BC_EQUALS_METHOD_SHOULD_WORK_FOR_ALL_OBJECTS)"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "J2EE: HttpSession への非直列化可能オブジェクトの格納 "
-#~ "(J2EE_STORE_OF_NON_SERIALIZABLE_OBJECT_INTO_SESSION)"
-#~ msgstr ""
-
 #~ msgid "GC: 検査されない型への総称呼び出し (GC_UNCHECKED_TYPE_IN_GENERIC_CALL)"
 #~ msgstr ""
 
 #~ msgid "PZ: 繰り返しでエントリオブジェクトを再利用しない (PZ_DONT_REUSE_ENTRY_OBJECTS_IN_ITERATORS)"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "DMI: エントリセットの要素を加えることは，Entry オブジェクトの再利用のために失敗するかもしれない "
-#~ "(DMI_ENTRY_SETS_MAY_REUSE_ENTRY_OBJECTS)"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "DMI: コレクションを消去するために removeAll メソッドを使用しない "
-#~ "(DMI_USING_REMOVEALL_TO_CLEAR_COLLECTION)"
 #~ msgstr ""
 
 #~ msgid "正確性 (CORRECTNESS)"
@@ -10907,11 +10735,6 @@ msgstr ""
 #~ msgstr ""
 
 #~ msgid "NP: Optional の戻り型を持つメソッドが明示的に null を返す (NP_OPTIONAL_RETURN_NULL)"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "NP: 非 null フィールドは初期化されていない "
-#~ "(NP_NONNULL_FIELD_NOT_INITIALIZED_IN_CONSTRUCTOR)"
 #~ msgstr ""
 
 #~ msgid "VR: 解決できないクラス，メソッドへの参照 (VR_UNRESOLVABLE_REFERENCE)"
@@ -10938,31 +10761,6 @@ msgstr ""
 #~ msgid "CAA: おそら互換性のない要素をく共変配列に格納している (CAA_COVARIANT_ARRAY_ELEMENT_STORE)"
 #~ msgstr ""
 
-#~ msgid ""
-#~ "Dm: EasyMock メソッドへの役に立たない/無意味な呼び出し "
-#~ "(DMI_VACUOUS_CALL_TO_EASYMOCK_METHOD)"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "Dm: ScheduledThreadPoolExecutor の最大プールサイズを変えようとする無駄な試み "
-#~ "(DMI_FUTILE_ATTEMPT_TO_CHANGE_MAXPOOL_SIZE_OF_SCHEDULED_THREAD_POOL_EXECUTOR)"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "DMI: 正確に表されない double から構築された BigDecimal "
-#~ "(DMI_BIGDECIMAL_CONSTRUCTED_FROM_DOUBLE)"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "Dm: コアプールサイズが0の ScheduledThreadPoolExecutor の作成 "
-#~ "(DMI_SCHEDULED_THREAD_POOL_EXECUTOR_WITH_ZERO_CORE_THREADS)"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "Dm: ランタイムリテンションなしで，アノテーションの存在を調べるためにリフレクションを使用することはできない "
-#~ "(DMI_ANNOTATION_IS_NOT_VISIBLE_TO_REFLECTION)"
-#~ msgstr ""
-
 #~ msgid "NP: null の引数をチェックしていないメソッド (NP_ARGUMENT_MIGHT_BE_NULL)"
 #~ msgstr ""
 
@@ -10987,44 +10785,13 @@ msgstr ""
 #~ msgid "Eq: equals メソッドは常に false を戻す (EQ_ALWAYS_FALSE)"
 #~ msgstr ""
 
-#~ msgid ""
-#~ "Eq: equals メソッドはスーパークラスの equals "
-#~ "メソッドをオーバーライドしているが，対称的ではないかもしれない "
-#~ "(EQ_OVERRIDING_EQUALS_NOT_SYMMETRIC)"
-#~ msgstr ""
-
 #~ msgid "Eq: 列挙型は共変な equals メソッドを定義している (EQ_DONT_DEFINE_EQUALS_FOR_ENUM)"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "Eq: 共変な equals メソッドを定義して，Object.equals(Object) "
-#~ "を継承している (EQ_SELF_USE_OBJECT)"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "Eq: Object.equals(Object) をオーバーライドしていない equals "
-#~ "メソッドの定義 (EQ_OTHER_USE_OBJECT)"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "Eq: equals(Object) メソッドをオーバーライドしていない equals "
-#~ "メソッドの定義 (EQ_OTHER_NO_OBJECT)"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "HE: ハッシュ化されたコンテキストでハッシュ化できないクラスの使用がシグネチャで宣言されている "
-#~ "(HE_SIGNATURE_DECLARES_HASHING_OF_UNHASHABLE_CLASS)"
 #~ msgstr ""
 
 #~ msgid "HE: ハッシュデータ構造で hashCode メソッドのないクラスを使用している (HE_USE_OF_UNHASHABLE_CLASS)"
 #~ msgstr ""
 
 #~ msgid "UR: コンストラクタで初期化されていないフィールドを読み出している (UR_UNINIT_READ)"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "UR: スーパークラスのコンストラクタから呼び出されるメソッドで初期化されていないフィールドを読み出している "
-#~ "(UR_UNINIT_READ_CALLED_FROM_SUPER_CONSTRUCTOR)"
 #~ msgstr ""
 
 #~ msgid "Nm: 非常に紛らわしい名前のメソッド (NM_VERY_CONFUSING)"
@@ -11049,16 +10816,6 @@ msgstr ""
 #~ msgstr ""
 
 #~ msgid "Se: 直列化機構のために private にしなければならないメソッド (SE_METHOD_MUST_BE_PRIVATE)"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "SF: switch 文のフォールスルーのために格納が無効になっている "
-#~ "(SF_DEAD_STORE_DUE_TO_SWITCH_FALLTHROUGH)"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "SF: スローする switch 文のフォールスルーのために格納が無効になっている "
-#~ "(SF_DEAD_STORE_DUE_TO_SWITCH_FALLTHROUGH_TO_THROW)"
 #~ msgstr ""
 
 #~ msgid "NP: 書き込まれていないフィールドの読み出し (NP_UNWRITTEN_FIELD)"
@@ -11091,20 +10848,10 @@ msgstr ""
 #~ msgid "RV: 作成した例外をスローするのではなく捨てている (RV_EXCEPTION_NOT_THROWN)"
 #~ msgstr ""
 
-#~ msgid ""
-#~ "RV: compareTo によって返された特定の値のコードチェック "
-#~ "(RV_CHECK_COMPARETO_FOR_SPECIFIC_RETURN_VALUE)"
-#~ msgstr ""
-
 #~ msgid "NP: null 値を利用している (NP_ALWAYS_NULL)"
 #~ msgstr ""
 
 #~ msgid "NP: 常に null 値のオブジェクトで close メソッドを呼び出している (NP_CLOSING_NULL)"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "NP: @Nonnull アノテーションが付けられたフィールドに null を格納している"
-#~ " (NP_STORE_INTO_NONNULL_FIELD)"
 #~ msgstr ""
 
 #~ msgid "NP: null 値を例外経路で利用している (NP_ALWAYS_NULL_EXCEPTION)"
@@ -11117,16 +10864,6 @@ msgstr ""
 #~ msgstr ""
 
 #~ msgid "NP: メソッド呼び出しは非 null パラメータに null を渡している (NP_NULL_PARAM_DEREF)"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "NP: 非 null パラメータに null "
-#~ "を渡している非仮想メソッドの呼び出し (NP_NULL_PARAM_DEREF_NONVIRTUAL)"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "NP: メソッド呼び出しは非 null パラメータに null を渡している"
-#~ " (NP_NULL_PARAM_DEREF_ALL_TARGETS_DANGEROUS)"
 #~ msgstr ""
 
 #~ msgid "NP: メソッド呼び出しは非 null パラメータに null を渡している (NP_NONNULL_PARAM_VIOLATION)"
@@ -11144,25 +10881,10 @@ msgstr ""
 #~ msgid "DMI: 逆にされたメソッド引数 (DMI_ARGUMENTS_WRONG_ORDER)"
 #~ msgstr ""
 
-#~ msgid ""
-#~ "RCN: 既に利用していた値の null チェック "
-#~ "(RCN_REDUNDANT_NULLCHECK_WOULD_HAVE_BEEN_A_NPE)"
-#~ msgstr ""
-
 #~ msgid "RC: 疑わしい参照比較 (RC_REF_COMPARISON)"
 #~ msgstr ""
 
-#~ msgid ""
-#~ "VA: 可変長引数を期待しているメソッドにプリミティブ型の配列を渡している "
-#~ "(VA_PRIMITIVE_ARRAY_PASSED_TO_OBJECT_VARARG)"
-#~ msgstr ""
-
 #~ msgid "FS: 与えられた引数の型は書式指示子に合致しない (VA_FORMAT_STRING_BAD_CONVERSION)"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "USELESS_STRING: 書式文字列を使用して役に立たない方法で配列をフォーマットしている "
-#~ "(VA_FORMAT_STRING_BAD_CONVERSION_FROM_ARRAY)"
 #~ msgstr ""
 
 #~ msgid "FS: 書式文字列ための前の引数がない (VA_FORMAT_STRING_NO_PREVIOUS_ARGUMENT)"
@@ -11180,16 +10902,6 @@ msgstr ""
 #~ msgid "FS: 無効な書式文字列 (VA_FORMAT_STRING_ILLEGAL)"
 #~ msgstr ""
 
-#~ msgid ""
-#~ "FS: 書式文字列で実際に使われるよりも多くの引数が渡されている "
-#~ "(VA_FORMAT_STRING_EXTRA_ARGUMENTS_PASSED)"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "FS: printf スタイルの書式が期待されているところで MessageFormat "
-#~ "が与えられている (VA_FORMAT_STRING_EXPECTED_MESSAGE_FORMAT_SUPPLIED)"
-#~ msgstr ""
-
 #~ msgid "EC: 参照等価性を使用して異なる型を比較している (EC_UNRELATED_TYPES_USING_POINTER_EQUALITY)"
 #~ msgstr ""
 
@@ -11205,25 +10917,10 @@ msgstr ""
 #~ msgid "EC: equals メソッドを呼び出して異なる型のインタフェースを比較している (EC_UNRELATED_INTERFACES)"
 #~ msgstr ""
 
-#~ msgid ""
-#~ "EC: equals メソッドを呼び出して無関係のクラスとインタフェースを比較している "
-#~ "(EC_UNRELATED_CLASS_AND_INTERFACE)"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "SA: フィールドへの代入ではなくローカル変数への自己代入 "
-#~ "(SA_LOCAL_SELF_ASSIGNMENT_INSTEAD_OF_FIELD)"
-#~ msgstr ""
-
 #~ msgid "INT: int 値と long 定数との間違った比較 (INT_BAD_COMPARISON_WITH_INT_VALUE)"
 #~ msgstr ""
 
 #~ msgid "INT: 符号付きバイトの間違った比較 (INT_BAD_COMPARISON_WITH_SIGNED_BYTE)"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "INT: 負ではない値と負の定数またはゼロとの間違った比較 "
-#~ "(INT_BAD_COMPARISON_WITH_NONNEGATIVE_VALUE)"
 #~ msgstr ""
 
 #~ msgid "BIT: 符号付きバイト値のビット加算 (BIT_ADD_OF_SIGNED_BYTE)"
@@ -11259,27 +10956,7 @@ msgstr ""
 #~ msgid "SA: ローカル変数とそれ自身との自己比較 (SA_LOCAL_SELF_COMPARISON)"
 #~ msgstr ""
 
-#~ msgid ""
-#~ "UMAC: 呼び出し不可能なメソッドが無名クラスで定義されている "
-#~ "(UMAC_UNCALLABLE_METHOD_OF_ANONYMOUS_CLASS)"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "IJU: run メソッドでの JUnit アサーションは JUnit "
-#~ "によって通知されない (IJU_ASSERT_METHOD_INVOKED_FROM_RUN_METHOD)"
-#~ msgstr ""
-
 #~ msgid "IJU: TestCase は suite メソッドの間違った宣言をしている (IJU_BAD_SUITE_METHOD)"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "IJU: TestCase は super.setup() を呼び出さない "
-#~ "setUp メソッドを実装している (IJU_SETUP_NO_SUPER)"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "IJU: TestCase は super.tearDown() を呼び出さない "
-#~ "tearDown メソッドを実装している  (IJU_TEARDOWN_NO_SUPER)"
 #~ msgstr ""
 
 #~ msgid "IJU: TestCase は 非 static な suite メソッドを実装している (IJU_SUITE_NOT_STATIC)"
@@ -11288,43 +10965,13 @@ msgstr ""
 #~ msgid "IJU: TestCase はテストがない  (IJU_NO_TESTS)"
 #~ msgstr ""
 
-#~ msgid ""
-#~ "BOA: スーパークラスの Adapter で実装されるメソッドを誤ってオーバーライドしているクラス"
-#~ " (BOA_BADLY_OVERRIDDEN_ADAPTER)"
-#~ msgstr ""
-
 #~ msgid "SQL: インデックスが0で ResultSet にアクセスしようとしているメソッド (SQL_BAD_RESULTSET_ACCESS)"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "SQL: インデックスが0で PreparedStatement にアクセスしようとしているメソッド"
-#~ " (SQL_BAD_PREPARED_STATEMENT_ACCESS)"
 #~ msgstr ""
 
 #~ msgid "SIO: instanceof 演算子を使用した不必要な型チェック (SIO_SUPERFLUOUS_INSTANCEOF)"
 #~ msgstr ""
 
-#~ msgid ""
-#~ "BAC: 初期化されていない AppletStub に依存する間違ったアプレットコンストラクタ "
-#~ "(BAC_BAD_APPLET_CONSTRUCTOR)"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "EC: equals(...) メソッドを使用して互換性のない配列を比較している "
-#~ "(EC_INCOMPATIBLE_ARRAY_COMPARE)"
-#~ msgstr ""
-
 #~ msgid "EC: 配列の equals メソッド呼び出しは == と等価である (EC_BAD_ARRAY_COMPARE)"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "STI: interrupted メソッドを呼び出すために不要な currentThread "
-#~ "メソッドを呼び出している (STI_INTERRUPTED_ON_CURRENTTHREAD)"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "STI: スレッドインスタンスで static Thread.interrupted() "
-#~ "を呼び出している (STI_INTERRUPTED_ON_UNKNOWNTHREAD)"
 #~ msgstr ""
 
 #~ msgid "DLS: return 文に無駄なインクリメントがある (DLS_DEAD_LOCAL_INCREMENT_IN_RETURN)"
@@ -11348,22 +10995,7 @@ msgstr ""
 #~ msgid "ICAST: int 値を long に変換して絶対時間として使用している (ICAST_INT_2_LONG_AS_INSTANT)"
 #~ msgstr ""
 
-#~ msgid ""
-#~ "ICAST: 整数値を double にキャストして Math.ceil() "
-#~ "に渡している (ICAST_INT_CAST_TO_DOUBLE_PASSED_TO_CEIL)"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "ICAST: 整数値を float にキャストして Math.round() "
-#~ "に渡している (ICAST_INT_CAST_TO_FLOAT_PASSED_TO_ROUND)"
-#~ msgstr ""
-
 #~ msgid "NP: null とわかっている値をその型のインスタンスなのか確かめている (NP_NULL_INSTANCEOF)"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "DMI: int に対して Double.longBitsToDouble() "
-#~ "を呼び出している (DMI_LONG_BITS_TO_DOUBLE_INVOKED_ON_INT)"
 #~ msgstr ""
 
 #~ msgid "BC: プリミティブ型の配列を含んでいる不可能なキャスト (BC_IMPOSSIBLE_CAST_PRIMITIVE_ARRAY)"
@@ -11387,11 +11019,6 @@ msgstr ""
 #~ msgid "RE: 正規表現のための無効な構文 (RE_BAD_SYNTAX_FOR_REGULAR_EXPRESSION)"
 #~ msgstr ""
 
-#~ msgid ""
-#~ "RE: 正規表現のために使われている File.separator "
-#~ "(RE_CANT_USE_FILE_SEPARATOR_AS_REGULAR_EXPRESSION)"
-#~ msgstr ""
-
 #~ msgid "DLS: 上書きされたインクリメント (DLS_OVERWRITTEN_INCREMENT)"
 #~ msgstr ""
 
@@ -11407,25 +11034,10 @@ msgstr ""
 #~ msgid "DMI: 配列で hashCode メソッドを呼び出している (DMI_INVOKING_HASHCODE_ON_ARRAY)"
 #~ msgstr ""
 
-#~ msgid ""
-#~ "USELESS_STRING: 配列で toString メソッドを呼び出している "
-#~ "(DMI_INVOKING_TOSTRING_ON_ARRAY)"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "USELESS_STRING: 名前のない配列で toString メソッドを呼び出している "
-#~ "(DMI_INVOKING_TOSTRING_ON_ANONYMOUS_ARRAY)"
-#~ msgstr ""
-
 #~ msgid "DMI: 月のための間違った定数値 (DMI_BAD_MONTH)"
 #~ msgstr ""
 
 #~ msgid "DMI: hasNext メソッドで next メソッドを呼び出している (DMI_CALLING_NEXT_FROM_HASNEXT)"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "QBA: 論理式で boolean リテラル値を代入しているメソッド "
-#~ "(QBA_QUESTIONABLE_BOOLEAN_ASSIGNMENT)"
 #~ msgstr ""
 
 #~ msgid "GC: 型パラメータとメソッド引数に関係がない (GC_UNRELATED_TYPES)"
@@ -11435,41 +11047,6 @@ msgstr ""
 #~ msgstr ""
 
 #~ msgid "DMI: D'oh! 無意味なメソッド呼び出し (DMI_DOH)"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "DMI: コレクションは自分自身を含めるべきではない "
-#~ "(DMI_COLLECTIONS_SHOULD_NOT_CONTAIN_THEMSELVES)"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "TQ: 型修飾子がない値が修飾子を必要とする場所で使われている "
-#~ "(TQ_UNKNOWN_VALUE_USED_WHERE_ALWAYS_STRICTLY_REQUIRED)"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "TQ: 互換性のない型修飾子による比較値 "
-#~ "(TQ_COMPARING_VALUES_WITH_INCOMPATIBLE_TYPE_QUALIFIERS)"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "TQ: 型修飾子アノテーションが付けられた値がその修飾子を付けてはならない値を必要とする場所で使われている "
-#~ "(TQ_ALWAYS_VALUE_USED_WHERE_NEVER_REQUIRED)"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "TQ: 型修飾子アノテーションが付けられていない値がその修飾子が付けられた値を必要とする場所で使われている "
-#~ "(TQ_NEVER_VALUE_USED_WHERE_ALWAYS_REQUIRED)"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "TQ: 型修飾子を付けていないかもしれない値がその型修飾子を必要とする方法で常に使われている "
-#~ "(TQ_MAYBE_SOURCE_VALUE_REACHES_ALWAYS_SINK)"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "TQ: 型修飾子を付けているかもしれない値がその型修飾子を禁止する方法で常に使われている "
-#~ "(TQ_MAYBE_SOURCE_VALUE_REACHES_NEVER_SINK)"
 #~ msgstr ""
 
 #~ msgid "FB: FindBugs からの予期しない/望ましくない警告 (FB_UNEXPECTED_WARNING)"
@@ -11505,16 +11082,6 @@ msgstr ""
 #~ msgid "OBL: ストリームやリソースのクリーンアップに失敗するかもしれないメソッド (OBL_UNSATISFIED_OBLIGATION)"
 #~ msgstr ""
 
-#~ msgid ""
-#~ "OBL: チェック例外でストリームやリソースのクリーンアップに失敗するかもしれないメソッド "
-#~ "(OBL_UNSATISFIED_OBLIGATION_EXCEPTION_EDGE)"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "LG: ロガーの変更は OpenJDK の弱参照が原因で潜在的に失われる "
-#~ "(LG_LOST_LOGGER_DUE_TO_WEAK_REFERENCE)"
-#~ msgstr ""
-
 #~ msgid "国際化 (I18N)"
 #~ msgstr ""
 
@@ -11536,11 +11103,6 @@ msgstr ""
 #~ msgid "DP: doPrivileged ブロック内で呼び出すべきメソッド (DP_DO_INSIDE_DO_PRIVILEGED)"
 #~ msgstr ""
 
-#~ msgid ""
-#~ "DP: doPrivileged ブロック内で作成されるべきクラスローダ "
-#~ "(DP_CREATE_CLASSLOADER_INSIDE_DO_PRIVILEGED)"
-#~ msgstr ""
-
 #~ msgid "FI: ファイナライザは public ではなく protected にすべき (FI_PUBLIC_SHOULD_BE_PROTECTED)"
 #~ msgstr ""
 
@@ -11551,12 +11113,6 @@ msgstr ""
 #~ msgstr ""
 
 #~ msgid "EI2: 可変オブジェクトへの参照を取り込むことによって内部表現を暴露するかもしれないメソッド (EI_EXPOSE_REP2)"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "MS: static "
-#~ "フィールドに可変オブジェクトを格納することによって，内部の静的状態を暴露するかもしれないメソッド "
-#~ "(EI_EXPOSE_STATIC_REP2)"
 #~ msgstr ""
 
 #~ msgid "MS: インタフェースから移動してパッケージプロテクテッドにすべきフィールド (MS_OOI_PKGPROTECT)"
@@ -11595,33 +11151,13 @@ msgstr ""
 #~ msgid "スレッド，ロック，volatile に関係があるコードの欠陥です。"
 #~ msgstr ""
 
-#~ msgid ""
-#~ "AT: 並行抽象の呼び出しシーケンスはアトミックではないかもしれない "
-#~ "(AT_OPERATION_SEQUENCE_ON_CONCURRENT_ABSTRACTION)"
-#~ msgstr ""
-
 #~ msgid "STCAL: static Calendar フィールド (STCAL_STATIC_CALENDAR_INSTANCE)"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "STCAL: static DateFormat フィールド "
-#~ "(STCAL_STATIC_SIMPLE_DATE_FORMAT_INSTANCE)"
 #~ msgstr ""
 
 #~ msgid "STCAL: static Calendar の呼び出し (STCAL_INVOKE_ON_STATIC_CALENDAR_INSTANCE)"
 #~ msgstr ""
 
-#~ msgid ""
-#~ "STCAL: static DateFormat の呼び出し "
-#~ "(STCAL_INVOKE_ON_STATIC_DATE_FORMAT_INSTANCE)"
-#~ msgstr ""
-
 #~ msgid "NP: 同じフィールドでの同期化と null チェック (NP_SYNC_AND_NULL_CHECK_FIELD)"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "VO: 配列への volatile 参照は，配列要素を volatile "
-#~ "として扱わない (VO_VOLATILE_REFERENCE_TO_ARRAY)"
 #~ msgstr ""
 
 #~ msgid "VO: volatile フィールドへのインクリメントはアトミックではない (VO_VOLATILE_INCREMENT)"
@@ -11646,16 +11182,6 @@ msgstr ""
 #~ msgstr ""
 
 #~ msgid "DL: ボクシングされたプリミティブの同期化 (DL_SYNCHRONIZATION_ON_BOXED_PRIMITIVE)"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "DL: ボクシングされたプリミティブ値の同期化 "
-#~ "(DL_SYNCHRONIZATION_ON_UNSHARED_BOXED_PRIMITIVE)"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "WL: クラスリテラルではなく getClass で同期化している "
-#~ "(WL_USING_GETCLASS_RATHER_THAN_CLASS_LITERAL)"
 #~ msgstr ""
 
 #~ msgid "ESync: 空の synchronized ブロック (ESync_EMPTY_SYNC)"
@@ -11692,11 +11218,6 @@ msgstr ""
 #~ msgstr ""
 
 #~ msgid "IS: 並行アクセスに対してガードされていないフィールド (IS_FIELD_NOT_GUARDED)"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "ML: フィールドを同期化でガードしようとする無駄な試み "
-#~ "(ML_SYNC_ON_FIELD_TO_GUARD_CHANGING_THAT_FIELD)"
 #~ msgstr ""
 
 #~ msgid "ML: 更新されるフィールドで同期化しているメソッド (ML_SYNC_ON_UPDATED_FIELD)"
@@ -11738,25 +11259,10 @@ msgstr ""
 #~ msgid "LI: 更新される static フィールドの間違った遅延初期化 (LI_LAZY_INIT_UPDATE_STATIC)"
 #~ msgstr ""
 
-#~ msgid ""
-#~ "JLM: java.util.concurrent のインスタンスで同期化している "
-#~ "(JLM_JSR166_UTILCONCURRENT_MONITORENTER)"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "JLM: util.concurrent 抽象化でモニタスタイルの wait "
-#~ "メソッドを使用している (JML_JSR166_CALLING_WAIT_RATHER_THAN_AWAIT)"
-#~ msgstr ""
-
 #~ msgid "JLM: Lock で同期化している (JLM_JSR166_LOCK_MONITORENTER)"
 #~ msgstr ""
 
 #~ msgid "SWL: ロックを保持して Thread.sleep() を呼び出しているメソッド (SWL_SLEEP_WITH_LOCK_HELD)"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "RV: putIfAbsent の戻り値は無視されて putIfAbsent "
-#~ "に渡した値は再利用された (RV_RETURN_VALUE_OF_PUTIFABSENT_IGNORED)"
 #~ msgstr ""
 
 #~ msgid "偽のランダムノイズ (NOISE)"
@@ -11786,11 +11292,6 @@ msgstr ""
 #~ msgid "HSC: 複数のクラスファイルにわたって複製されている巨大な文字列定数 (HSC_HUGE_SHARED_STRING_CONSTANT)"
 #~ msgstr ""
 
-#~ msgid ""
-#~ "Dm: URL の equals メソッドと hashCode "
-#~ "メソッドはブロックする (DMI_BLOCKING_METHODS_ON_URL)"
-#~ msgstr ""
-
 #~ msgid "Dm: URL の Map や Set はひどい性能になる (DMI_COLLECTION_OF_URLS)"
 #~ msgstr ""
 
@@ -11815,20 +11316,10 @@ msgstr ""
 #~ msgid "Bx: 効率が悪い浮動小数点 Number コンストラクタを呼び出しているメソッド (DM_FP_NUMBER_CTOR)"
 #~ msgstr ""
 
-#~ msgid ""
-#~ "Bx: toString メソッドを呼び出すためだけにボクシングされたプリミティブを割り当てている "
-#~ "(DM_BOXED_PRIMITIVE_TOSTRING)"
-#~ msgstr ""
-
 #~ msgid "Bx: プリミティブを解析するためのボクシング/アンボクシング (DM_BOXED_PRIMITIVE_FOR_PARSING)"
 #~ msgstr ""
 
 #~ msgid "Bx: プリミティブが比較でボクシングされている (DM_BOXED_PRIMITIVE_FOR_COMPARE)"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "Bx: プリミティブ値が3項演算子のためにアンボクシングされて，型変換される "
-#~ "(BX_UNBOXED_AND_COERCED_FOR_TERNARY_OPERATOR)"
 #~ msgstr ""
 
 #~ msgid "Bx: ボクシングされた値がアンボクシングされて，すぐに再ボクシングされる (BX_UNBOXING_IMMEDIATELY_REBOXED)"
@@ -11837,17 +11328,7 @@ msgstr ""
 #~ msgid "Bx: プリミティブ値がボクシングされて，すぐにアンボクシングされる (BX_BOXING_IMMEDIATELY_UNBOXED)"
 #~ msgstr ""
 
-#~ msgid ""
-#~ "Bx: プリミティブ値がプリミティブ型の型変換をするためにボクシングされて，アンボクシングされる "
-#~ "(BX_BOXING_IMMEDIATELY_UNBOXED_TO_PERFORM_COERCION)"
-#~ msgstr ""
-
 #~ msgid "Dm: クラスオブジェクトを得るためだけにインスタンスを作成しているメソッド (DM_NEW_FOR_GETCLASS)"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "Dm: 整数の乱数を生成するためには nextDouble メソッド ではなく "
-#~ "nextInt メソッドを使用する (DM_NEXTINT_VIA_NEXTDOUBLE)"
 #~ msgstr ""
 
 #~ msgid "SS: 読み出されないフィールド (SS_SHOULD_BE_STATIC)"
@@ -11862,32 +11343,7 @@ msgstr ""
 #~ msgid "SIC: static 内部クラスにすべき (SIC_INNER_SHOULD_BE_STATIC)"
 #~ msgstr ""
 
-#~ msgid ""
-#~ "SIC: static 内部クラスにリファクタリングできるかもしれない "
-#~ "(SIC_INNER_SHOULD_BE_STATIC_NEEDS_THIS)"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "SIC: 名前付き static 内部クラスにリファクタリングできるかもしれない "
-#~ "(SIC_INNER_SHOULD_BE_STATIC_ANON)"
-#~ msgstr ""
-
 #~ msgid "UPM: private メソッドは決して呼び出されない (UPM_UNCALLED_PRIVATE_METHOD)"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "SBSC: ループの中で + を使用して文字列を連結しているメソッド "
-#~ "(SBSC_USE_STRINGBUFFER_CONCATENATION)"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "IIL: ループの中で NodeList.getLength() を呼び出しているメソッド "
-#~ "(IIL_ELEMENTS_GET_LENGTH_IN_LOOP)"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "IIL: ループの中で prepareStatement を呼び出しているメソッド "
-#~ "(IIL_PREPARE_STATEMENT_IN_LOOP)"
 #~ msgstr ""
 
 #~ msgid "IIL: ループの中で Pattern.compile を呼び出しているメソッド (IIL_PATTERN_COMPILE_IN_LOOP)"
@@ -11899,17 +11355,7 @@ msgstr ""
 #~ msgid "IIO: String.indexOf(String) の非効率的な使用 (IIO_INEFFICIENT_INDEX_OF)"
 #~ msgstr ""
 
-#~ msgid ""
-#~ "IIO: String.lastIndexOf(String) の非効率的な使用 "
-#~ "(IIO_INEFFICIENT_LAST_INDEX_OF)"
-#~ msgstr ""
-
 #~ msgid "ITA: 長さが0の配列の引数で toArray メソッドを使用しているメソッド (ITA_INEFFICIENT_TO_ARRAY)"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "WMI: entrySet イテレータではなく効率が悪い keySet "
-#~ "イテレータを使用している (WMI_WRONG_MAP_ITERATOR)"
 #~ msgstr ""
 
 #~ msgid "UM: 定数値で Math クラスの static メソッドを呼び出しているメソッド (UM_UNNECESSARY_MATH)"
@@ -11922,16 +11368,6 @@ msgstr ""
 #~ msgstr ""
 
 #~ msgid "リモートから悪用可能なセキュリティ脆弱性を引き起こすかもしれない信頼できない入力を使用しています。"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "XSS: 反射型クロスサイトスクリプティング脆弱性がエラーページにあるサーブレット "
-#~ "(XSS_REQUEST_PARAMETER_TO_SEND_ERROR)"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "XSS: 反射型クロスサイトスクリプティング脆弱性があるサーブレット "
-#~ "(XSS_REQUEST_PARAMETER_TO_SERVLET_WRITER)"
 #~ msgstr ""
 
 #~ msgid "XSS: 反射型クロスサイトスクリプティング脆弱性がある JSP (XSS_REQUEST_PARAMETER_TO_JSP_WRITER)"
@@ -11955,25 +11391,7 @@ msgstr ""
 #~ msgid "Dm: 空のデータベースパスワード (DMI_EMPTY_DB_PASSWORD)"
 #~ msgstr ""
 
-#~ msgid ""
-#~ "SQL: SQL の Statement の execute または"
-#~ " addBatch メソッドに定数ではない文字列を渡している "
-#~ "(SQL_NONCONSTANT_STRING_PASSED_TO_EXECUTE)"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "SQL: PreparedStatement が定数ではない文字列から生成されている "
-#~ "(SQL_PREPARED_STATEMENT_GENERATED_FROM_NONCONSTANT_STRING)"
-#~ msgstr ""
-
 #~ msgid "危ないコード (STYLE)"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "紛らわしいコード，異常なコード，またはエラーを引き起こす方法で書かれたコードです。 "
-#~ "たとえば，ローカル変数への無効な代入，switch 文のフォールスルー，未確認のキャスト，null "
-#~ "とわかっている値の冗長な null チェックなどです。 より多くの誤検出を受け入れました。 "
-#~ "FindBugs の以前のバージョンでは，このカテゴリは Style として知られていました。"
 #~ msgstr ""
 
 #~ msgid "CAA: フィールドへの共変配列代入 (CAA_COVARIANT_ARRAY_FIELD)"
@@ -11986,16 +11404,6 @@ msgstr ""
 #~ msgstr ""
 
 #~ msgid "Dm: サポートされていないメソッドの呼び出し (DMI_UNSUPPORTED_METHOD)"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "Dm: Thread オブジェクトが Runnable が期待されているところに渡されている"
-#~ " (DMI_THREAD_PASSED_WHERE_RUNNABLE_EXPECTED)"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "NP: readLine メソッドの結果が null なのか確かめないで値を利用している"
-#~ " (NP_DEREFERENCE_OF_READLINE_VALUE)"
 #~ msgstr ""
 
 #~ msgid "NP: readLine メソッドの結果をすぐに利用している (NP_IMMEDIATE_DEREFERENCE_OF_READLINE)"
@@ -12022,53 +11430,13 @@ msgstr ""
 #~ msgid "IC: 初期化が循環している (IC_INIT_CIRCULARITY)"
 #~ msgstr ""
 
-#~ msgid ""
-#~ "IA: 潜在的な継承されたメソッドなのか外部のメソッドなのかあいまいなメソッドの呼び出し "
-#~ "(IA_AMBIGUOUS_INVOCATION_OF_INHERITED_OR_OUTER_METHOD)"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "Se: サブクラスで継承できない private な readResolve "
-#~ "メソッド (SE_PRIVATE_READ_RESOLVE_NOT_INHERITED)"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "Se: Serializable ではないクラスの transient フィールド "
-#~ "(SE_TRANSIENT_FIELD_OF_NONSERIALIZABLE_CLASS)"
-#~ msgstr ""
-
 #~ msgid "SF: 1つの case が次の case へと通り抜ける switch 文を見つけた (SF_SWITCH_FALLTHROUGH)"
 #~ msgstr ""
 
 #~ msgid "SF: default がない switch 文を見つけた (SF_SWITCH_NO_DEFAULT)"
 #~ msgstr ""
 
-#~ msgid ""
-#~ "UuF: 未使用の public または protected フィールド "
-#~ "(UUF_UNUSED_PUBLIC_OR_PROTECTED_FIELD)"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "UrF: 読み出されない public または protected フィールド"
-#~ " (URF_UNREAD_PUBLIC_OR_PROTECTED_FIELD)"
-#~ msgstr ""
-
 #~ msgid "QF: 複雑か巧妙か間違ったインクリメントの for ループ (QF_QUESTIONABLE_FOR_LOOP)"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "NP: 書き込まれていない public または protected "
-#~ "フィールドの読み出し (NP_UNWRITTEN_PUBLIC_OR_PROTECTED_FIELD)"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "UwF: コンストラクタで初期化されていないフィールドを null チェックなしで null"
-#~ " 値を利用している (UWF_FIELD_NOT_INITIALIZED_IN_CONSTRUCTOR)"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "UwF: 書き込まてれいない public または protected "
-#~ "フィールド (UWF_UNWRITTEN_PUBLIC_OR_PROTECTED_FIELD)"
 #~ msgstr ""
 
 #~ msgid "UC: 役に立たない空ではない void メソッド (UC_USELESS_VOID_METHOD)"
@@ -12095,27 +11463,6 @@ msgstr ""
 #~ msgid "RV: String.indexOf の結果が正かどうか確かめている (RV_CHECK_FOR_POSITIVE_INDEXOF)"
 #~ msgstr ""
 
-#~ msgid ""
-#~ "RV: readLine メソッドの結果を null ではないのか確かめた後で捨てている"
-#~ " (RV_DONT_JUST_NULL_CHECK_READLINE)"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "NP: パラメータは  非 null でなければならないが null "
-#~ "可能としてマークされている "
-#~ "(NP_PARAMETER_MUST_BE_NONNULL_BUT_MARKED_AS_NULLABLE)"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "NP: null になっている可能性があるメソッドの戻り値を利用している "
-#~ "(NP_NULL_ON_SOME_PATH_FROM_RETURN_VALUE)"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "NP: null 値を実行不可能かもしれない分岐で利用している可能性がある "
-#~ "(NP_NULL_ON_SOME_PATH_MIGHT_BE_INFEASIBLE)"
-#~ msgstr ""
-
 #~ msgid "NP: null とわかっている値のロード (NP_LOAD_OF_KNOWN_NULL_VALUE)"
 #~ msgstr ""
 
@@ -12128,27 +11475,7 @@ msgstr ""
 #~ msgid "UCF: 次の行へ続くだけの役に立たない制御フロー (UCF_USELESS_CONTROL_FLOW_NEXT_LINE)"
 #~ msgstr ""
 
-#~ msgid ""
-#~ "RCN: null とわかっている値の冗長な null チェック "
-#~ "(RCN_REDUNDANT_NULLCHECK_OF_NULL_VALUE)"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "RCN: null ではないことがわかっている値の冗長な null チェック "
-#~ "(RCN_REDUNDANT_NULLCHECK_OF_NONNULL_VALUE)"
-#~ msgstr ""
-
 #~ msgid "RCN: 2つの null 値の冗長な比較 (RCN_REDUNDANT_COMPARISON_TWO_NULL_VALUES)"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "RCN: 非 null 値と null 値との冗長な比較 "
-#~ "(RCN_REDUNDANT_COMPARISON_OF_NULL_AND_NONNULL_VALUE)"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "FS: Boolean 型ではない引数を ％b 書式指示子を使用してフォーマットしている"
-#~ " (VA_FORMAT_STRING_BAD_CONVERSION_TO_BOOLEAN)"
 #~ msgstr ""
 
 #~ msgid "SA: ローカル変数の自己代入 (SA_LOCAL_SELF_ASSIGNMENT)"
@@ -12193,16 +11520,6 @@ msgstr ""
 #~ msgid "RI: スーパークラスと同じインタフェースを実装しているクラス (RI_REDUNDANT_INTERFACES)"
 #~ msgstr ""
 
-#~ msgid ""
-#~ "MTIA: Struts Action を拡張したクラスでのインスタンス変数の使用 "
-#~ "(MTIA_SUSPECT_STRUTS_INSTANCE_FIELD)"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "MTIA: Servlet クラスを拡張したクラスでのインスタンス変数の使用 "
-#~ "(MTIA_SUSPECT_SERVLET_INSTANCE_FIELD)"
-#~ msgstr ""
-
 #~ msgid "PS: 公開インタフェースで同期化とセマフォを暴露するクラス (PS_PUBLIC_SEMAPHORES)"
 #~ msgstr ""
 
@@ -12233,33 +11550,13 @@ msgstr ""
 #~ msgid "IM: 平均の計算はオーバーフローする可能性がある (IM_AVERAGE_COMPUTATION_COULD_OVERFLOW)"
 #~ msgstr ""
 
-#~ msgid ""
-#~ "BSHIFT: 符号なし右シフトを short/byte にキャストしている "
-#~ "(ICAST_QUESTIONABLE_UNSIGNED_RIGHT_SHIFT)"
-#~ msgstr ""
-
 #~ msgid "DMI: ハードコードされた絶対パス名への参照がある (DMI_HARDCODED_ABSOLUTE_FILENAME)"
 #~ msgstr ""
 
 #~ msgid "DMI: substring(0) の呼び出しは元の値を返す (DMI_USELESS_SUBSTRING)"
 #~ msgstr ""
 
-#~ msgid ""
-#~ "ST: インスタンスメソッドから static フィールドへの書き込み "
-#~ "(ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD)"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "DMI: ObjectOutput に書き込まれる非直列化可能オブジェクト "
-#~ "(DMI_NONSERIALIZABLE_OBJECT_WRITTEN)"
-#~ msgstr ""
-
 #~ msgid "DB: 2つの分岐のために同じコードを使用しているメソッド (DB_DUPLICATE_BRANCHES)"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "DB: switch 文の2つの case のために同じコードを使用しているメソッド "
-#~ "(DB_DUPLICATE_SWITCH_CLAUSES)"
 #~ msgstr ""
 
 #~ msgid "XFB: XMLインタフェースの特定の実装のインスタンスを作成しているメソッド (XFB_XML_FACTORY_BYPASS)"
@@ -12275,27 +11572,11 @@ msgstr ""
 #~ msgstr ""
 
 #~ msgid ""
-#~ "TQ: 値は型修飾子を必要としないが，不明としてマークされている "
-#~ "(TQ_EXPLICIT_UNKNOWN_SOURCE_VALUE_REACHES_NEVER_SINK)"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "TQ: 値は型修飾子を必要としているが，不明としてマークされている "
-#~ "(TQ_EXPLICIT_UNKNOWN_SOURCE_VALUE_REACHES_ALWAYS_SINK)"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "NP: メソッドは戻り値の nullness アノテーションを緩和している "
-#~ "(NP_METHOD_RETURN_RELAXING_ANNOTATION)"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "NP: メソッドはパラメータに nullness アノテーションを強化している "
-#~ "(NP_METHOD_PARAMETER_TIGHTENS_ANNOTATION)"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "NP: メソッドはパラメータに nullness アノテーションを強化している "
-#~ "(NP_METHOD_PARAMETER_RELAXING_ANNOTATION)"
+#~ "<p> This code compares an int "
+#~ "value with a long constant that is"
+#~ " outside\n"
+#~ "the range of values that can be represented as an int value.\n"
+#~ "This comparison is vacuous and possibly to be incorrect.\n"
+#~ "</p>"
 #~ msgstr ""
 
