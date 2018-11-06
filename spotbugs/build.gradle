@@ -51,6 +51,7 @@ dependencies {
   compile 'jaxen:jaxen:1.1.6' // only transitive through dom4j:dom4j:1.6.1, which has an *optional* dependency on jaxen:jaxen.
   compile 'commons-lang:commons-lang:2.6'
   compile 'com.google.code.findbugs:jFormatString:3.0.0'
+  compile 'org.slf4j:slf4j-api:1.7.25'
 
   // These annotations are repackaged to spotbugs.jar, to keep backward compatibility for Ant task.
   // If they're not repackaged, Ant task will report 'java.lang.ClassNotFoundException: edu.umd.cs.findbugs.annotations.CleanupObligation'
@@ -61,6 +62,7 @@ dependencies {
   testCompile 'junit:junit:4.12'
   testCompile 'jdepend:jdepend:2.9.1'
   testCompile 'org.apache.ant:ant:1.9.4'
+  testCompile 'org.apache.logging.log4j:log4j-slf4j-impl:2.11.1'
 
   // TODO : Some of these can be extracted to actual dependencies
   compile fileTree(dir: 'lib', include: '*.jar')
