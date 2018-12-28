@@ -21,8 +21,10 @@ package edu.umd.cs.findbugs.log;
 
 import java.io.IOException;
 import java.io.PrintStream;
+import java.lang.invoke.MethodHandles;
 import java.util.Comparator;
 import java.util.EmptyStackException;
+import java.util.logging.Logger;
 import java.util.Stack;
 import java.util.TreeSet;
 import java.util.concurrent.ConcurrentHashMap;
@@ -42,6 +44,8 @@ import edu.umd.cs.findbugs.xml.XMLWriteable;
  */
 public class Profiler implements XMLWriteable {
 
+    private static final Logger LOG = Logger.getLogger(MethodHandles.lookup().lookupClass().getName());
+
     final static boolean REPORT = SystemProperties.getBoolean("profiler.report");
     final static boolean MAX_CONTEXT = SystemProperties.getBoolean("findbugs.profiler.maxcontext");
 
@@ -49,7 +53,7 @@ public class Profiler implements XMLWriteable {
         startTimes = new Stack<>();
         profile = new ConcurrentHashMap<>();
         if (REPORT) {
-            System.err.println("Profiling activated");
+            LOG.info("Profiling activated");
         }
     }
 
@@ -393,7 +397,7 @@ public class Profiler implements XMLWriteable {
             }
             stream.flush();
         } catch (RuntimeException e) {
-            System.err.println(e);
+            LOG.severe(e.getMessage());
         }
     }
 

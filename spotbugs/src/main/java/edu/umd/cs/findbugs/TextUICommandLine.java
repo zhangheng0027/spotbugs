@@ -27,11 +27,13 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.io.PrintStream;
+import java.lang.invoke.MethodHandles;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.LinkedHashSet;
 import java.util.List;
+import java.util.logging.Logger;
 import java.util.Map;
 import java.util.Set;
 import java.util.StringTokenizer;
@@ -49,12 +51,17 @@ import edu.umd.cs.findbugs.config.UserPreferences;
 import edu.umd.cs.findbugs.filter.FilterException;
 import edu.umd.cs.findbugs.util.Util;
 
+import static java.util.logging.Level.*;
+
 /**
  * Helper class to parse the command line and configure the IFindBugsEngine
  * object. As a side-effect it also configures a DetectorFactoryCollection (to
  * enable and disable detectors as requested).
  */
 public class TextUICommandLine extends FindBugsCommandLine {
+
+    private static final Logger LOG = Logger.getLogger(MethodHandles.lookup().lookupClass().getName());
+
     /**
      * Handling callback for choose() method, used to implement the
      * -chooseVisitors and -choosePlugins options.
@@ -407,7 +414,7 @@ public class TextUICommandLine extends FindBugsCommandLine {
                 }
                 outputStream = UTF8.printStream(oStream);
             } catch (IOException e) {
-                System.err.println("Couldn't open " + outputFile + " for output: " + e.toString());
+                LOG.log(SEVERE, "Couldn't open {0} for output: {1}", new Object[] {outputFile, e});
                 System.exit(1);
             }
         } else if ("-bugReporters".equals(option)) {
@@ -461,10 +468,9 @@ public class TextUICommandLine extends FindBugsCommandLine {
                 if (factory == null) {
                     throw new IllegalArgumentException("Unknown detector: " + what);
                 }
-                if (FindBugs.DEBUG) {
-                    System.err.println("Detector " + factory.getShortName() + " " + (enabled ? "enabled" : "disabled")
-                            + ", userPreferences=" + System.identityHashCode(getUserPreferences()));
-                }
+                LOG.log(FINE, "Detector {0} {1}, userPreferences={2}", new Object[] {
+                    factory.getShortName(), (enabled ? "enabled" : "disabled"), System.identityHashCode(getUserPreferences())
+                });
                 getUserPreferences().enableDetector(factory, enabled);
             });
         } else if ("-choosePlugins".equals(option)) {

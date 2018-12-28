@@ -19,10 +19,12 @@
 
 package edu.umd.cs.findbugs.model;
 
+import java.lang.invoke.MethodHandles;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Locale;
+import java.util.logging.Logger;
 import java.util.Map;
 import java.util.Set;
 
@@ -32,6 +34,8 @@ import edu.umd.cs.findbugs.BugInstance;
 import edu.umd.cs.findbugs.ClassAnnotation;
 import edu.umd.cs.findbugs.SystemProperties;
 
+import static java.util.logging.Level.*;
+
 /**
  * Build a map of added class names to removed class names. Serves as a
  * ClassNameRewriter that can match up renamed classes in two BugCollections.
@@ -40,7 +44,7 @@ import edu.umd.cs.findbugs.SystemProperties;
  */
 public class MovedClassMap implements ClassNameRewriter {
 
-    private static final boolean DEBUG = SystemProperties.getBoolean("movedClasses.debug");
+    private static final Logger LOG = Logger.getLogger(MethodHandles.lookup().lookupClass().getName());
 
     private final BugCollection before;
 
@@ -76,9 +80,7 @@ public class MovedClassMap implements ClassNameRewriter {
             String shortAddedName = getShortClassName(fullAddedName);
             String fullRemovedName = removedShortNameToFullNameMap.get(shortAddedName);
             if (fullRemovedName != null) {
-                if (DEBUG) {
-                    System.err.println(fullAddedName + " --> " + fullRemovedName);
-                }
+                LOG.log(FINE, "{0} --> {1}", new Object[] {fullAddedName, fullRemovedName});
                 rewriteMap.put(fullAddedName, fullRemovedName);
             }
 

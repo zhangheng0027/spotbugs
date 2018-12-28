@@ -19,7 +19,11 @@
 
 package edu.umd.cs.findbugs;
 
+import java.lang.invoke.MethodHandles;
 import java.lang.reflect.Modifier;
+import java.util.logging.Logger;
+
+import static java.util.logging.Level.*;
 
 /**
  * Check that the BCEL classes present seem to be the right ones. Specifically,
@@ -34,6 +38,8 @@ import java.lang.reflect.Modifier;
  */
 
 public class CheckBcel {
+
+    private static final Logger LOG = Logger.getLogger(MethodHandles.lookup().lookupClass().getName());
 
     /**
      *
@@ -78,11 +84,11 @@ public class CheckBcel {
      *            name of the BCEL class
      */
     private static void error(String cname) {
-        System.err.println("BCEL class compatibility error.");
-        System.err.println("The version of class " + cname + " found was not compatible with\n"
+        LOG.severe("BCEL class compatibility error.");
+        LOG.log(SEVERE, "The version of class {0} found was not compatible with\n"
                 + "SpotBugs.  Please remove any BCEL libraries that may be interfering.  This may happen\n"
                 + "if you have an old version of BCEL or a library that includes an old version of BCEL\n"
-                + "in an \"endorsed\" directory.");
+                + "in an \"endorsed\" directory.", cname);
     }
 
     /**
