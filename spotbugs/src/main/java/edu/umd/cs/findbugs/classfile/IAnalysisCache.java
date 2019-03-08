@@ -203,7 +203,10 @@ public interface IAnalysisCache {
 
     /**
      * Get map of analysis-local objects.
+     * 
+     * @deprecated This class is no more needless to realize multi-thread model in SpotBugs 4.0.
      */
+    @Deprecated
     public Map<?, ?> getAnalysisLocals();
 
     /**

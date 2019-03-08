@@ -22,6 +22,10 @@ import java.util.Map;
 
 import edu.umd.cs.findbugs.classfile.Global;
 
+/**
+ * @deprecated This class is no more needless to realize multi-thread model in SpotBugs 4.0.
+ */
+@Deprecated
 public class AnalysisLocal<T> {
     protected T initialValue() {
         return null;

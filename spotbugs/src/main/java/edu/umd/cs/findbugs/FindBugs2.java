@@ -22,6 +22,7 @@ package edu.umd.cs.findbugs;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashSet;
@@ -32,6 +33,11 @@ import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
+import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
+import java.util.stream.Collectors;
 
 import javax.annotation.CheckForNull;
 import javax.annotation.Nonnull;
@@ -126,6 +132,7 @@ public class FindBugs2 implements IFindBugsEngine, AutoCloseable {
 
     private final AnalysisOptions analysisOptions = new AnalysisOptions(true);
 
+    private final ExecutorService service = Executors.newFixedThreadPool(4);
     /**
      * Constructor.
      */
@@ -326,6 +333,7 @@ public class FindBugs2 implements IFindBugsEngine, AutoCloseable {
      * needed. (used by Eclipse plugin)
      */
     public void dispose() {
+        service.shutdown();
         if (executionPlan != null) {
             executionPlan.dispose();
         }
@@ -350,6 +358,13 @@ public class FindBugs2 implements IFindBugsEngine, AutoCloseable {
         IO.close(project);
         project = null;
         analysisOptions.userPreferences = null;
+
+        try {
+            service.awaitTermination(5, TimeUnit.SECONDS);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+            throw new RuntimeException(e);
+        }
     }
 
     @Override
@@ -1062,12 +1077,11 @@ public class FindBugs2 implements IFindBugsEngine, AutoCloseable {
                     currentAnalysisContext.setClassBeingAnalyzed(classDescriptor);
 
                     try {
-                        for (Detector2 detector : detectorList) {
-                            if (Thread.interrupted()) {
-                                throw new InterruptedException();
-                            }
+                        Collection<Callable<Void>> tasks = Arrays.stream(detectorList)
+                                .map(detector -> {
+                                    return (Callable<Void>) () -> {
                             if (isHuge && !FirstPassDetector.class.isAssignableFrom(detector.getClass())) {
-                                continue;
+                                            return null;
                             }
                             if (DEBUG) {
                                 System.out.println("Applying " + detector.getDetectorClassName() + " to " + classDescriptor);
@@ -1089,9 +1103,14 @@ public class FindBugs2 implements IFindBugsEngine, AutoCloseable {
                             } finally {
                                 profiler.end(detector.getClass());
                             }
+                                        return null;
+                            };
+                        }).collect(Collectors.toList());
+                        service.invokeAll(tasks);
+                        if (Thread.interrupted()) {
+                            throw new InterruptedException();
                         }
                     } finally {
-
                         progressReporter.finishClass();
                         profiler.endContext(currentClassName);
                         currentAnalysisContext.clearClassBeingAnalyzed();
@@ -1116,11 +1135,8 @@ public class FindBugs2 implements IFindBugsEngine, AutoCloseable {
                 }
 
                 progressReporter.finishPerClassAnalysis();
-
                 passCount++;
             }
-
-
         } finally {
 
             bugReporter.finish();
@@ -1132,7 +1148,6 @@ public class FindBugs2 implements IFindBugsEngine, AutoCloseable {
         }
 
     }
-
     /**
      * Notify all IClassObservers that we are visiting given class.
      *
