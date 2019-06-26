@@ -70,9 +70,9 @@ dependencies {
   compile 'org.dom4j:dom4j:2.1.1'
   compile 'jaxen:jaxen:1.1.6' // only transitive through dom4j:dom4j:1.6.1, which has an *optional* dependency on jaxen:jaxen.
   compile 'commons-lang:commons-lang:2.6'
-  compile 'org.slf4j:slf4j-api:1.8.0-beta4'
+  compile 'org.slf4j:slf4j-api:2.0.0-alpha0'
   compile 'net.sf.saxon:Saxon-HE:9.9.1-2'
-  logBinding 'org.apache.logging.log4j:log4j-slf4j18-impl:2.11.1'
+  logBinding 'org.apache.logging.log4j:log4j-slf4j18-impl:2.11.2'
 
   // These annotations are repackaged to spotbugs.jar, to keep backward compatibility for Ant task.
   // If they're not repackaged, Ant task will report 'java.lang.ClassNotFoundException: edu.umd.cs.findbugs.annotations.CleanupObligation'
@@ -80,7 +80,7 @@ dependencies {
 
   testCompile 'junit:junit:4.12'
   testCompile 'org.apache.ant:ant:1.9.4'
-  testCompile 'org.apache.logging.log4j:log4j-slf4j18-impl:2.11.1'
+  testCompile 'org.apache.logging.log4j:log4j-slf4j18-impl:2.11.2'
   testCompile sourceSets.gui.output
 
   // TODO : Some of these can be extracted to actual dependencies
