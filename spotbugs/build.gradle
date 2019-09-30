@@ -342,9 +342,8 @@ task guiTest(type: Test) {
 
 jacocoTestReport {
   dependsOn(test, guiTest)
-  executionData = files("$buildDir/jacoco/test.exec", "$buildDir/jacoco/guiTest.exec")
-  sourceDirectories = files(sourceSets.main.java.srcDirs, sourceSets.gui.java.srcDirs)
-  classDirectories = files(sourceSets.main.output, sourceSets.gui.output)
+  executionData files("$buildDir/jacoco/test.exec", "$buildDir/jacoco/guiTest.exec")
+  sourceSets sourceSets.main, sourceSets.gui
 }
 
 // TODO : generatemanual (we should decide what to do with the manual)

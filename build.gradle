@@ -44,11 +44,10 @@ task jacocoRootReport(type: JacocoReport) {
   description = 'Merge all coverage reports before submit to SonarQube'
   dependsOn(subprojects.jacocoTestReport)
 
-  executionData = files(subprojects.jacocoTestReport.executionData)
-  sourceDirectories = files(subprojects.jacocoTestReport.sourceDirectories)
-
+  executionData files(subprojects.jacocoTestReport.executionData)
+  additionalSourceDirs files(subprojects.jacocoTestReport.sourceDirectories)
   // Only enable class directories related to non-test project
-  classDirectories = files(subprojects.jacocoTestReport.classDirectories).filter {
+  additionalClassDirs files(subprojects.jacocoTestReport.classDirectories).filter {
     !it.toString().contains("-test") && !it.toString().contains("Test") && !it.toString().contains("junit")
   }
 
