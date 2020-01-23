@@ -93,8 +93,8 @@ javadoc {
 }
 
 task copyLibsForEclipse(type: Copy) {
-    dependsOn configurations.compile
-    from configurations.compile.files {
+    dependsOn configurations.compileClasspath
+    from configurations.compileClasspath.files {
       include "*.jar"
       exclude "*xml-apis*.jar"
     }
