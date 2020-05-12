@@ -6,10 +6,15 @@ Currently the versioning policy of this project follows [Semantic Versioning v2.
 
 ## Unreleased
 
-## 4.0.3 - 2020-04-28
 ### Security
 
 * Update dom4j to 2.1.3 to fix security vulnerability. ([#1122](https://github.com/spotbugs/spotbugs/issues/1122))
+
+## 4.0.3 - 2020-05-13
+
+### Fixed
+
+* Avoid changing the SecurityManager when launched as an IntelliJ IDEA plugin.
 
 ## 4.0.2 - 2020-04-15
 

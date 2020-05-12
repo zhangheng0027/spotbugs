@@ -19,7 +19,7 @@ html_context = {
   'version' : '4.0',
   'full_version' : '4.0.3',
   'maven_plugin_version' : '4.0.0',
-  'gradle_plugin_version' : '4.0.7',
+  'gradle_plugin_version' : '4.0.8',
   'archetype_version' : '0.2.3'
 }
 
