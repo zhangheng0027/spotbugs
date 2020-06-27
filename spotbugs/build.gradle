@@ -63,18 +63,6 @@ dependencies {
   api 'org.ow2.asm:asm-util:8.0.1'
   api 'org.apache.bcel:bcel:6.5.0'
   api 'net.jcip:jcip-annotations:1.0'
-  api('org.dom4j:dom4j:2.1.3') {
-    // exclude transitive dependencies to keep compatible with dom4j 2.1.1
-    // https://github.com/dom4j/dom4j/issues/85
-    // https://docs.gradle.org/current/userguide/dependency_downgrade_and_exclude.html#sec:excluding-transitive-deps
-    exclude group: 'jaxen',            module: 'jaxen'
-    exclude group: 'javax.xml.stream', module: 'stax-api'
-    exclude group: 'net.java.dev.msv', module: 'xsdlib'
-    exclude group: 'javax.xml.bind',   module: 'jaxb-api'
-    exclude group: 'pull-parser',      module: 'pull-parser'
-    exclude group: 'xpp3',             module: 'xpp3'
-  }
-  implementation 'jaxen:jaxen:1.1.6' // only transitive through dom4j:dom4j:1.6.1, which has an *optional* dependency on jaxen:jaxen.
   api 'org.apache.commons:commons-lang3'
   api 'org.apache.commons:commons-text'
   constraints {
@@ -92,6 +80,7 @@ dependencies {
   // These annotations are repackaged to spotbugs.jar, to keep backward compatibility for Ant task.
   // If they're not repackaged, Ant task will report 'java.lang.ClassNotFoundException: edu.umd.cs.findbugs.annotations.CleanupObligation'
   api project(':spotbugs-annotations')
+  api project(':spotbugs-entities')
 
   testImplementation 'junit:junit:4.13'
   testImplementation 'org.apache.ant:ant:1.10.7'
@@ -129,6 +118,7 @@ eclipse.classpath.file {
          classpath.entries.forEach {
              entry ->
                if(entry.kind == 'lib' && !entry.path.contains('spotbugs-annotations')
+                   && !entry.path.contains('spotbugs-entities')
                    && !java.nio.file.Files.isDirectory(java.nio.file.Paths.get(entry.path))) {
                    entry.path = ".libs/" + java.nio.file.Paths.get(entry.path).getFileName().toString()
                    entry.exported = true
@@ -143,6 +133,7 @@ task copyLibsForEclipse (type: Copy) {
     include "*.jar"
     exclude "*xml-apis*.jar"
     exclude "*spotbugs-annotations*.jar"
+    exclude "*spotbugs-entities*.jar"
 
     from configurations.logBinding.files
     into ".libs"

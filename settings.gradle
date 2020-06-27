@@ -11,6 +11,7 @@ if (new File(rootDir, eclipseFile).exists()) {
 }
 
 include ':test-harness-core', ':test-harness-jupiter'
+include ':spotbugs-entities'
 
 gradleEnterprise {
   buildScan {
