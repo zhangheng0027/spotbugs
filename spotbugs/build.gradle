@@ -3,13 +3,6 @@ apply from: "$rootDir/gradle/maven.gradle"
 apply from: "$rootDir/gradle/checkstyle.gradle"
 apply from: "$rootDir/gradle/javadoc.gradle"
 
-configurations {
-  // used only in distribution. It is not listed in pom.xml, so users like maven plugin don't use this dependency.
-  logBinding
-  // used to make sure Eclipse config can see apple library during compilation
-  appleExtensions
-}
-
 ext {
   asmVersion = '9.2'
   log4jVersion = '2.17.1'
@@ -62,6 +55,21 @@ sourceSets {
   }
 }
 
+configurations {
+  // used only in distribution. It is not listed in pom.xml, so users like maven plugin don't use this dependency.
+  logBinding
+  // used to make sure Eclipse config can see apple library during compilation
+  appleExtensions
+
+  guiImplementation {
+    extendsFrom(configurations.implementation)
+  }
+
+  guiTestImplementation {
+    extendsFrom(configurations.testImplementation)
+  }
+}
+
 dependencies {
   api "org.ow2.asm:asm:${asmVersion}"
   api "org.ow2.asm:asm-analysis:${asmVersion}"
@@ -100,15 +108,13 @@ dependencies {
   testImplementation "org.apache.logging.log4j:log4j-slf4j18-impl:$log4jVersion"
   testImplementation 'com.google.errorprone:error_prone_annotations:2.10.0'
 
-  guiImplementation sourceSets.main.runtimeClasspath
+  guiImplementation sourceSets.main.output
   guiCompileOnly 'com.apple:AppleJavaExtensions:1.4'
-  guiCompileOnly project(':spotbugs-annotations')
-  guiTestImplementation sourceSets.gui.runtimeClasspath
-  guiTestImplementation 'junit:junit:4.13'
-  guiTestCompileOnly project(':spotbugs-annotations')
 
   // for Eclipse compilation only
   appleExtensions 'com.apple:AppleJavaExtensions:1.4'
+  guiTestImplementation sourceSets.main.output
+  guiTestImplementation sourceSets.gui.output
 }
 
 clean {
@@ -126,22 +132,18 @@ tasks.withType(Jar).configureEach {
 }
 
 eclipse.classpath {
-  plusConfigurations += [ configurations.testRuntimeClasspath ]
-  plusConfigurations += [ configurations.appleExtensions ]
+  plusConfigurations = [ configurations.guiTestRuntimeClasspath, configurations.appleExtensions ]
 }
-
 eclipse.classpath.file {
     whenMerged {
       classpath ->
          classpath.entries.removeAll { entry -> entry.kind == 'lib' && entry.path.contains('xml-apis')}
-         classpath.entries.forEach {
-             entry ->
-               if(entry.kind == 'lib' && !entry.path.contains('spotbugs-annotations')
-                   && !java.nio.file.Files.isDirectory(java.nio.file.Paths.get(entry.path))) {
-                   entry.path = ".libs/" + java.nio.file.Paths.get(entry.path).getFileName().toString()
-                   entry.exported = true
-               }
-      }
+         classpath.entries.findAll {
+           it.kind == 'lib' && it instanceof org.gradle.plugins.ide.eclipse.model.AbstractClasspathEntry
+         } .forEach {
+           def attributes = it.entryAttributes
+           attributes["test"] = attributes["gradle_used_by_scope"] == "guiTest,test"
+         }
     }
 }
 
