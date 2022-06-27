@@ -146,7 +146,7 @@ import org.slf4j.LoggerFactory;
 public class FindNullDeref implements Detector, UseAnnotationDatabase, NullDerefAndRedundantComparisonCollector {
     private final Logger log = LoggerFactory.getLogger(getClass());
 
-    public static final boolean DEBUG = SystemProperties.getBoolean("fnd.debug");
+    public static final boolean DEBUG = true;  // SystemProperties.getBoolean("fnd.debug");
 
     private static final boolean DEBUG_NULLARG = SystemProperties.getBoolean("fnd.debug.nullarg");
 
